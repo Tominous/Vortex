@@ -37,7 +37,7 @@ public class DebugCmd extends Command
     {
         this.vortex = vortex;
         this.name = "debug";
-        this.help = "shows some debug stats";
+        this.help = "shows some debug statistics";
         this.ownerCommand = true;
         this.guildOnly = false;
         this.hidden = true;
@@ -52,7 +52,7 @@ public class DebugCmd extends Command
                 + "\nLast Startup: "+FormatUtil.secondsToTime(Constants.STARTUP.until(OffsetDateTime.now(), ChronoUnit.SECONDS))+" ago"
                 + "\nMemory: **"+usedMb+"**Mb / **"+totalMb+"**Mb\n");
         vortex.getShardManager().getShardManagers().forEach(bot -> 
-        //Stream.of(vortex.getShardManager()).forEach(bot -> 
+        Stream.of(vortex.getShardManager()).forEach(bot -> 
         {
             User self = bot.getShards().get(0).getSelfUser();
             sb.append("\n__**").append(self.getName()).append("** (").append(self.getId()).append(")__")
