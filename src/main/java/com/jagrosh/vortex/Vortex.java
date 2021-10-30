@@ -170,7 +170,7 @@ public class Vortex
                             new DebugCmd(this),
                             new PremiumCmd(this),
                             new ReloadCmd(this)
-                            //new TransferCmd(this)
+                            new TransferCmd(this)
                         )
                         .setHelpConsumer(event -> event.replyInDm(FormatUtil.formatHelp(event, this), m -> 
                         {
@@ -181,7 +181,7 @@ public class Vortex
                                 } catch(PermissionException ignore) {}
                         }, t -> event.replyWarning("Help cannot be sent because you are blocking Direct Messages.")))
                         .setDiscordBotsKey(config.getString("listing.discord-bots"))
-                        //.setCarbonitexKey(config.getString("listing.carbon"))
+                        .setCarbonitexKey(config.getString("listing.carbon"))
                         .build();
         MessageAction.setDefaultMentions(Arrays.asList(Message.MentionType.EMOTE, Message.MentionType.CHANNEL));
         shards = new MultiBotManager.MultiBotManagerBuilder()
