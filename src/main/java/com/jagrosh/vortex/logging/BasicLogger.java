@@ -163,7 +163,7 @@ public class BasicLogger
             return;
         if(messages.isEmpty())
         {
-            //log(OffsetDateTime.now(), tc, "\uD83D\uDEAE", "**"+count+"** messages were deleted from "+text.getAsMention()+" (**"+messages.size()+"** logged)", null);
+            log(OffsetDateTime.now(), tc, "\uD83D\uDEAE", "**"+count+"** messages were deleted from "+text.getAsMention()+" (**"+messages.size()+"** logged)", null);
             return;
         }
         TextChannel mtc = messages.get(0).getTextChannel(vortex.getShardManager());
